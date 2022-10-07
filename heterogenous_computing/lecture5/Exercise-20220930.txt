@@ -1,0 +1,39 @@
+Exercise 20220930:
+
+1. Range-Counter
+In this question we will revisit the range_counter question.
+This question is about using Processes and shared resources.
+
+Given a matrix of numbers, we will spawn a new process for each row.
+Each process will then take that row of data and compute the number of values falling in
+the range of [5-10] (5 to 10 inclusive).
+
+
+Using the custom process class (please see range-counter-exercise.py),
+we will send the row of data and the index of that row (in the data matrix) to the process to perform the range
+computation (described above). The row of data and the index of that row have to be stored as shared resources.
+
+Once the computation is done per row, please write the result back to a dictionary of results where the key is the index
+of the row and the value is the result of the range counter computation.
+
+
+2. Producer-consumer-conditions
+This question is about using process conditions and queues.
+Please see the file producer-consumer-conditionals.py.
+
+In this question we will revisit the concept of producers and consumers.
+
+We will start by initialising a dynamic number of consumer processes (NUM_consumers) which wait to receive items/data
+through a queue.
+
+We will have one producer that takes a list of "documents" (strings) provided to it and it will put these documents in
+a queue. Once these documents have all been put in the queue, it will inform the consumers that they can now proceed
+with taking items out from the queue.
+
+The consumers wait patiently until the producer gives them the signal/message/indication. Then they take a document
+from the queue and compute its sha256 hex digest. They then print this result out.
+
+Please complete the template provided to you (producer-consumer-conditionals.py) to answer this question. 
+
+Note that the consumer threads are running in a while True loop. 
+
